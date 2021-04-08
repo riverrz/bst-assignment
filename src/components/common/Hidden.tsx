@@ -1,4 +1,4 @@
-import React from "react";
+import { isSM } from "../../helpers";
 
 interface Props {
   smDown?: boolean; // if screen size is smaller tham sm then hide the children
@@ -19,5 +19,3 @@ export function Hidden(props: Props) {
 
   return children;
 }
-
-const isSM = window.matchMedia("(max-width: 768px)").matches;

@@ -14,3 +14,8 @@ export function matchesCampaignType(campaign: Campaign, type: CampaignTypes) {
       return createdDate < today;
   }
 }
+
+export const isXS = window.matchMedia("(max-width: 576px)").matches;
+export const isSM = window.matchMedia("(max-width: 768px)").matches;
+export const isMD = window.matchMedia("(max-width: 992px)").matches;
+export const isLG = window.matchMedia("(min-width: 992px)").matches;
