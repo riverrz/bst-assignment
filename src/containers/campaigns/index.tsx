@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from "react";
-import { Container, Flex, Typography } from "../components/common";
-import { Tabs, Tab } from "../components/common";
-import { CampaignTypes } from "../types/CampaignTypes";
+import { Container, Flex, Typography } from "../../components/common";
+import { Tabs, Tab } from "../../components/common";
+import { CampaignTypes } from "../../types/CampaignTypes";
+import CampaignList from "./components/CampaignList";
 
 interface Props {}
 
@@ -32,6 +33,7 @@ function Campaigns(props: Props) {
           })}
         </Tabs>
       </Flex>
+      <CampaignList activeCampaignType={activeType} />
     </Container>
   );
 }

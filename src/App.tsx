@@ -1,5 +1,5 @@
 import React from "react";
-import Campaigns from "./containers/Campaigns";
+import Campaigns from "./containers/campaigns";
 import Navbar from "./layout/Navbar";
 
 function App() {
