@@ -1,3 +1,4 @@
+import { matchesCampaignType } from "../../../helpers";
 import { Campaign } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
 import { delay } from "../../../utils/delay";
@@ -12,7 +13,9 @@ export const getCampaigns = async (campaignType: CampaignTypes) => {
   if (!store[campaignType]) {
     // artifical delay
     await delay(1000);
-    store[campaignType] = mockData.data;
+    store[campaignType] = mockData.data.filter((campaign) =>
+      matchesCampaignType(campaign, campaignType)
+    );
   }
   return store[campaignType];
 };

@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  as?: "h1" | "h2" | "h3" | "p";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   color?: "primary" | "secondary";
   gutterBottom?: boolean;
   fontSize?: string;
+  fontWeight?: string | number;
+  transform?: string;
+  fontStyle?: string;
   children?: React.ReactNode;
 }
 
@@ -15,11 +18,22 @@ export const Typography = React.memo(function (props: Props) {
 });
 
 function buildTypographyElement(props: Props) {
-  const { as = "h1", color = "primary", gutterBottom, fontSize } = props;
+  const {
+    as = "h1",
+    color = "primary",
+    gutterBottom,
+    fontSize,
+    fontWeight,
+    transform,
+    fontStyle,
+  } = props;
   return styled[as]`
     color: ${getColor(color)};
     ${gutterBottom ? "margin-bottom: 10px" : ""};
     ${fontSize ? `font-size: ${fontSize}` : ""};
+    ${fontWeight ? `font-weight: ${fontWeight}` : ""};
+    ${transform ? `text-transform: ${transform}` : ""};
+    ${fontStyle ? `font-style: ${fontStyle}` : ""};
   `;
 }
 
