@@ -31,6 +31,7 @@ const StyledTab = styled(Base)<Partial<Props>>`
   font-size: 1.8rem;
   font-weight: 400;
   margin: 0 5px;
+  transition: color 0.4s ease, border-color 0.4s ease;
   ${({ isActive }) => {
     if (isActive) {
       return `
