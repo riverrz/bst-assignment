@@ -38,21 +38,21 @@ function CampaignList(props: Props) {
 
   if (loading) {
     return (
-      <Typography as="p" color="secondary">
+      <Typography as="p" fontSize="1.6rem">
         Loading...
       </Typography>
     );
   }
   if (error) {
     return (
-      <Typography as="p" color="secondary">
+      <Typography as="p" fontSize="1.6rem">
         {errorMsg}
       </Typography>
     );
   }
   if (data.length === 0) {
     return (
-      <Typography as="p" color="secondary">
+      <Typography as="p" fontSize="1.6rem">
         No campaigns available under this category!
       </Typography>
     );
