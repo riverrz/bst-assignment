@@ -6,7 +6,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-function Tabs(props: Props) {
+export function Tabs(props: Props): any {
   const [currentlyActiveTab, setCurrentlyActiveTab] = useState("");
 
   const { onChange, activeTab, children } = props;
@@ -38,4 +38,3 @@ function Tabs(props: Props) {
     });
   });
 }
-export default Tabs;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Base } from "./Base";
 
 interface Props {
   isActive?: boolean;
@@ -9,7 +10,7 @@ interface Props {
   children?: React.ReactNode;
 }
 
-function Tab(props: Props) {
+export const Tab = React.memo(function (props: Props) {
   const { isActive, onClick = () => {}, eventKey, title, children } = props;
   return (
     <>
@@ -19,14 +20,17 @@ function Tab(props: Props) {
       {isActive && children}
     </>
   );
-}
+});
 
-const StyledTab = styled.div<Partial<Props>>`
+const StyledTab = styled(Base)<Partial<Props>>`
   color: var(--text-primary);
-  border: 1px solid;
+  border-bottom: 2px solid;
   border-color: transparent;
   padding: 1rem;
   cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0 5px;
   ${({ isActive }) => {
     if (isActive) {
       return `
@@ -36,5 +40,3 @@ const StyledTab = styled.div<Partial<Props>>`
     }
   }}
 `;
-
-export default React.memo(Tab);
