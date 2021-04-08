@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { Typography } from "../../../components/common";
+import { Hidden, Typography } from "../../../components/common";
 import useAPIHook from "../../../hooks/useAPIHook";
 import { Campaign } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
@@ -41,7 +41,13 @@ function CampaignList(props: Props) {
       </Typography>
     );
   }
-  return <div>Showing data</div>;
+  return (
+    <div>
+      Showing data
+      <Hidden smDown>Visible to bigger than SM</Hidden>
+      <Hidden smUp>Visible to smaller than SM</Hidden>
+    </div>
+  );
 }
 
 export default CampaignList;
