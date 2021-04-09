@@ -12,10 +12,13 @@ import {
 
 interface Props {
   data: Campaign;
+  openScheduleModal: (data: Campaign) => void;
 }
 
 function CampaignListItem(props: Props) {
-  const { data } = props;
+
+  const { data, openScheduleModal } = props;
+
   const { name, region } = data;
   const createdOn = new Date(data.createdOn);
 
@@ -87,10 +90,7 @@ function CampaignListItem(props: Props) {
                 Report
               </Flex>
             </Button>
-            <Button
-              onClick={() => console.log("Scheduling again")}
-              className="grow"
-            >
+            <Button onClick={() => openScheduleModal(data)} className="grow">
               <Flex alignItems="center">
                 <Image
                   src="/assets/svg/calendar.svg"

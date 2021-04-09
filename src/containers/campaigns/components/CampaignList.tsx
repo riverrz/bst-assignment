@@ -1,10 +1,12 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useContext, useEffect } from "react";
 import { Hidden, Typography } from "../../../components/common";
+import { ModalContext, ModalFunctions } from "../../../hoc/WithModals";
 import useAPIHook from "../../../hooks/useAPIHook";
-import { Campaign as CampaignType } from "../../../types/Campaign";
+import { Campaign, Campaign as CampaignType } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
 import * as campaignServices from "../services/index";
 import CampaignListItem from "./CampaignListItem";
+import Scheduler from "./Scheduler";
 import {
   ActionsContainer,
   CampaignContainer,
@@ -22,12 +24,15 @@ interface Props {
 function CampaignList(props: Props) {
   const { activeCampaignType } = props;
 
+  const { addModal } = useContext(ModalContext);
+
   const {
     loading,
     error,
     errorMsg,
     data,
     fetchData,
+    setData,
   } = useAPIHook<CampaignType>({
     getData: campaignServices.getCampaigns,
   });
@@ -35,6 +40,24 @@ function CampaignList(props: Props) {
   useEffect(() => {
     fetchData(activeCampaignType);
   }, [activeCampaignType, fetchData]);
+
+  const onScheduleDateChange = useCallback((date: Date, data: Campaign) => {
+    // Get the updated date and insert the campaign appropriately
+    console.log(date);
+    // setData once data is updated
+  }, []);
+
+  const openScheduleModal = useCallback(
+    (data: Campaign) => {
+      console.log("Open schedule modal");
+      addModal({
+        content: (
+          <Scheduler onDone={(date) => onScheduleDateChange(date, data)} />
+        ),
+      });
+    },
+    [addModal, onScheduleDateChange]
+  );
 
   if (loading) {
     return (
@@ -85,7 +108,13 @@ function CampaignList(props: Props) {
       </Hidden>
       <ListItemsContainer>
         {data.map((campaign) => {
-          return <CampaignListItem key={campaign.id} data={campaign} />;
+          return (
+            <CampaignListItem
+              key={campaign.id}
+              data={campaign}
+              openScheduleModal={openScheduleModal}
+            />
+          );
         })}
       </ListItemsContainer>
     </ListContainer>

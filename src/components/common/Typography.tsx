@@ -10,6 +10,7 @@ interface Props {
   transform?: string;
   fontStyle?: string;
   children?: React.ReactNode;
+  textAlign?: string;
 }
 
 export const Typography = React.memo(function (props: Props) {
@@ -26,6 +27,7 @@ function buildTypographyElement(props: Props) {
     fontWeight,
     transform,
     fontStyle,
+    textAlign,
   } = props;
   return styled[as]`
     color: ${getColor(color)};
@@ -34,6 +36,7 @@ function buildTypographyElement(props: Props) {
     ${fontWeight ? `font-weight: ${fontWeight}` : ""};
     ${transform ? `text-transform: ${transform}` : ""};
     ${fontStyle ? `font-style: ${fontStyle}` : ""};
+    ${textAlign ? `text-align: ${textAlign}` : ""};
   `;
 }
 

@@ -18,7 +18,7 @@ export const Button = styled.button<Props>`
     }
     return `
       :hover {
-        background-color: #ADD8E6;
+        background-color: #F5FCFF;
       }
     `;
   }}

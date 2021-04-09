@@ -7,3 +7,4 @@ export * from "./Flex";
 export * from "./Hidden";
 export * from "./Button";
 export * from "./Image";
+export * from "./Overlay";

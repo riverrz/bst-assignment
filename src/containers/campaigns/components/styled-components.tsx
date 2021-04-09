@@ -31,7 +31,14 @@ export const ActionsContainer = styled.div`
   }
 `;
 export const ListItemsContainer = styled.div`
-  // & :not(:last-child) {
-  //   border-bottom: 1px solid #ececec;
-  // }
+  :not(:last-child) {
+    border-bottom: 1px solid #ececec;
+  }
+`;
+
+export const SchedulerContainer = styled.div`
+  background-color: var(--white);
+  width: 50vw;
+  min-width: 300px;
+  max-width: 500px;
 `;
