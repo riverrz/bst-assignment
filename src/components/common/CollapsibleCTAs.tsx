@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { isMD, isSM, isXS } from "../../helpers";
 
@@ -8,6 +8,7 @@ interface Props {
 
 function CollapsibleCTAs(props: Props) {
   const { children } = props;
+  const [showCollapsedSection, setShowCollapsedSection] = useState(false);
   const childrenToShow = getChildrenToShowByScreenSize();
   const noOfChildren = React.Children.count(children);
   const showCollapse = noOfChildren > childrenToShow;
@@ -20,9 +21,15 @@ function CollapsibleCTAs(props: Props) {
     <>
       {visibleChildren}
       {showCollapse && (
-        <CollapseCTA>
-          <img src="/assets/svg/three-dots-vertical" alt="Collapsed ctas" />
-          <CollapseSection>{collapsedChildren}</CollapseSection>
+        <CollapseCTA
+          tabIndex={0}
+          onFocus={() => setShowCollapsedSection(true)}
+          onBlur={() => setShowCollapsedSection(false)}
+        >
+          <img src="/assets/svg/three-dots-vertical.svg" alt="Collapsed ctas" />
+          {showCollapsedSection && (
+            <CollapseSection>{collapsedChildren}</CollapseSection>
+          )}
         </CollapseCTA>
       )}
     </>
@@ -32,12 +39,17 @@ function CollapsibleCTAs(props: Props) {
 const CollapseCTA = styled.div`
   cursor: pointer;
   position: relative;
+  outline: none;
+  padding: 1rem;
+  border-radius: 50%;
 `;
 
 const CollapseSection = styled.div`
   position: absolute;
-  bottom: 0;
+  top: 3rem;
   right: 0;
+  z-index: 2;
+  background-color: #eee;
   > * {
     padding: 1rem;
   }

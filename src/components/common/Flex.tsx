@@ -9,7 +9,8 @@ interface Props extends BaseProps {
     | "flex-start"
     | "flex-end"
     | "space-between"
-    | "space-around";
+    | "space-around"
+    | "space-evenly";
   inline?: boolean;
   flexWrap?: "wrap" | "nowrap";
 }

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 interface Props {
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div";
   color?: "primary" | "secondary";
   gutterBottom?: boolean;
   fontSize?: string;
