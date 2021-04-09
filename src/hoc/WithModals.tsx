@@ -26,6 +26,7 @@ export const ModalContext = React.createContext<ContextValues>({
 function WithModals(WrappedComponent: any) {
   return function Inner(props: any) {
     const [modals, setModals] = useState<Modal[]>([]);
+
     const closeModal = useCallback((modalId: string) => {
       setModals((prevModals) => prevModals.filter(({ id }) => id !== modalId));
     }, []);

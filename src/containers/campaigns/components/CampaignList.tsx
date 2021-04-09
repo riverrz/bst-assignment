@@ -1,6 +1,6 @@
 import React, { useCallback, useContext, useEffect } from "react";
 import { Hidden, Typography } from "../../../components/common";
-import { ModalContext, ModalFunctions } from "../../../hoc/WithModals";
+import { ModalContext } from "../../../hoc/WithModals";
 import useAPIHook from "../../../hooks/useAPIHook";
 import { Campaign, Campaign as CampaignType } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
@@ -38,21 +38,32 @@ function CampaignList(props: Props) {
   });
 
   useEffect(() => {
+    // Fetch the data based on activeCampaignType
     fetchData(activeCampaignType);
   }, [activeCampaignType, fetchData]);
 
-  const onScheduleDateChange = useCallback((date: Date, data: Campaign) => {
-    // Get the updated date and insert the campaign appropriately
-    console.log(date);
-    // setData once data is updated
-  }, []);
+  const onScheduleDateChange = useCallback(
+    (date: Date, campaign: Campaign) => {
+      // Get the updated date by updating the campaign's position
+      const updatedData = campaignServices.updateCampaignScheduleDate(
+        campaign,
+        date,
+        activeCampaignType
+      );
 
+      // setData once data is updated
+      setData(updatedData);
+    },
+    [activeCampaignType, setData]
+  );
+
+  // For opening modal containing calendar for updating scheduled date
   const openScheduleModal = useCallback(
-    (data: Campaign) => {
+    (campaign: Campaign) => {
       console.log("Open schedule modal");
       addModal({
         content: (
-          <Scheduler onDone={(date) => onScheduleDateChange(date, data)} />
+          <Scheduler onDone={(date) => onScheduleDateChange(date, campaign)} />
         ),
       });
     },
