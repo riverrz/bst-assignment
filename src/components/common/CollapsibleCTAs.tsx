@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { isMD, isSM, isXS } from "../../helpers";
+import useComponentVisible from "../../hooks/useComponentVisible";
 
 interface Props {
   children?: React.ReactNode;
@@ -8,7 +9,12 @@ interface Props {
 
 function CollapsibleCTAs(props: Props) {
   const { children } = props;
-  const [showCollapsedSection, setShowCollapsedSection] = useState(false);
+  const {
+    ref,
+    isComponentVisible,
+    setIsComponentVisible,
+  } = useComponentVisible(false);
+
   const childrenToShow = getChildrenToShowByScreenSize();
   const noOfChildren = React.Children.count(children);
   const showCollapse = noOfChildren > childrenToShow;
@@ -21,13 +27,9 @@ function CollapsibleCTAs(props: Props) {
     <>
       {visibleChildren}
       {showCollapse && (
-        <CollapseCTA
-          tabIndex={0}
-          onFocus={() => setShowCollapsedSection(true)}
-          onBlur={() => setShowCollapsedSection(false)}
-        >
+        <CollapseCTA ref={ref} onClick={() => setIsComponentVisible(true)}>
           <img src="/assets/svg/three-dots-vertical.svg" alt="Collapsed ctas" />
-          {showCollapsedSection && (
+          {isComponentVisible && (
             <CollapseSection>{collapsedChildren}</CollapseSection>
           )}
         </CollapseCTA>

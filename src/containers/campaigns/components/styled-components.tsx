@@ -18,7 +18,7 @@ export const DateContainer = styled.div`
 `;
 
 export const CampaignContainer = styled.div`
-  flex: 4;
+  flex: 3;
 `;
 export const ViewContainer = styled.div`
   flex: 1;

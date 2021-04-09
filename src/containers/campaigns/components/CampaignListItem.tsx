@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Hidden, Typography } from "../../../components/common";
+import { Flex, Hidden, Typography, Image } from "../../../components/common";
 import { Button } from "../../../components/common/Button";
 import CollapsibleCTAs from "../../../components/common/CollapsibleCTAs";
 import { Campaign } from "../../../types/Campaign";
@@ -43,9 +43,9 @@ function CampaignListItem(props: Props) {
         <DateContainer>{renderDate()}</DateContainer>
       </Hidden>
       <CampaignContainer>
-        <Flex>
+        <Flex alignItems="center">
           <div>
-            <img src="/assets/svg/campaign-1.svg" alt={name} />
+            <Image src="/assets/svg/campaign-1.svg" alt={name} spaceRight />
           </div>
           <div>
             <Typography as="div" fontSize="1.6rem">
@@ -61,27 +61,44 @@ function CampaignListItem(props: Props) {
         </Flex>
       </CampaignContainer>
       <ViewContainer>
-        <Flex justifyContent="center" alignItems="center">
-          <Typography as="div" color="primary" fontSize="1.8rem">
-            <img src="/assets/svg/dollar.svg" alt="CSV" />
+        <Button className="grow">
+          <Flex alignItems="center">
+            <Image src="/assets/svg/dollar.svg" alt="CSV" spaceRight />
             View
-          </Typography>
-        </Flex>
+          </Flex>
+        </Button>
       </ViewContainer>
       <ActionsContainer>
-        <Flex justifyContent="space-evenly" alignItems="center">
+        <Flex justifyContent="flex-start" alignItems="center">
           <CollapsibleCTAs>
-            <Button>
-              <img src="/assets/svg/csv-cta.svg" alt="CSV" />
-              CSV
+            <Button className="grow">
+              <Flex alignItems="center">
+                <Image src="/assets/svg/csv-cta.svg" alt="CSV" spaceRight />
+                CSV
+              </Flex>
             </Button>
-            <Button>
-              <img src="/assets/svg/report-cta.svg" alt="Report" />
-              Report
+            <Button className="grow">
+              <Flex alignItems="center">
+                <Image
+                  src="/assets/svg/report-cta.svg"
+                  alt="Report"
+                  spaceRight
+                />
+                Report
+              </Flex>
             </Button>
-            <Button onClick={() => console.log("Scheduling again")}>
-              <img src="/assets/svg/calendar.svg" alt="Schedule again" />
-              Schedule again
+            <Button
+              onClick={() => console.log("Scheduling again")}
+              className="grow"
+            >
+              <Flex alignItems="center">
+                <Image
+                  src="/assets/svg/calendar.svg"
+                  alt="Schedule again"
+                  spaceRight
+                />
+                Schedule again
+              </Flex>
             </Button>
           </CollapsibleCTAs>
         </Flex>

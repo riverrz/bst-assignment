@@ -5,3 +5,5 @@ export * from "./Tab";
 export * from "./Base";
 export * from "./Flex";
 export * from "./Hidden";
+export * from "./Button";
+export * from "./Image";

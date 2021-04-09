@@ -30,3 +30,10 @@ body {
   background-repeat: no-repeat;
   min-height: 100vh;
 }
+
+.grow {
+  flex: 1;
+}
+.text-center {
+  text-align: center;
+}
