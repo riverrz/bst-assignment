@@ -43,10 +43,10 @@ function buildTypographyElement(props: Props) {
 function getColor(color: Props["color"]) {
   switch (color) {
     case "primary":
-      return "var(--text-primary)";
+      return "var(--primary)";
     case "secondary":
-      return "var(--text-secondary)";
+      return "var(--secondary)";
     default:
-      return "var(--text-primary)";
+      return "var(--primary)";
   }
 }

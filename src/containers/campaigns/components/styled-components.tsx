@@ -41,4 +41,5 @@ export const SchedulerContainer = styled.div`
   width: 50vw;
   min-width: 300px;
   max-width: 500px;
+  padding: 1rem;
 `;

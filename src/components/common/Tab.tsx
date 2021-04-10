@@ -23,7 +23,7 @@ export const Tab = React.memo(function (props: Props) {
 });
 
 const StyledTab = styled(Base)<Partial<Props>>`
-  color: var(--text-primary);
+  color: var(--primary);
   border-bottom: 2px solid;
   border-color: transparent;
   padding: 1rem;
@@ -35,8 +35,8 @@ const StyledTab = styled(Base)<Partial<Props>>`
   ${({ isActive }) => {
     if (isActive) {
       return `
-        color: var(--text-secondary);
-        border-color: var(--text-secondary);
+        color: var(--secondary);
+        border-color: var(--secondary);
       `;
     }
   }}
