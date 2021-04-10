@@ -43,3 +43,11 @@ export const SchedulerContainer = styled.div`
   max-width: 500px;
   padding: 1rem;
 `;
+
+export const DescriptionContainer = styled.div`
+  padding: 2rem;
+  background-color: var(--white);
+  width: 50vw;
+  min-width: 300px;
+  max-width: 500px;
+`;

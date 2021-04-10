@@ -5,6 +5,7 @@ interface Props {
   spaceRight?: boolean;
   spaceTop?: boolean;
   spaceBottom?: boolean;
+  width?: string;
 }
 
 export const Image = styled.img<Props>`
@@ -12,4 +13,5 @@ export const Image = styled.img<Props>`
   margin-bottom: ${({ spaceBottom }) => (spaceBottom ? "10px" : "")};
   margin-left: ${({ spaceLeft }) => (spaceLeft ? "10px" : "")};
   margin-right: ${({ spaceRight }) => (spaceRight ? "10px" : "")};
+  width: ${({ width }) => (width ? width : "")};
 `;

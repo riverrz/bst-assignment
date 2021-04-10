@@ -8,7 +8,7 @@
       "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
       "csv": "Some CSV link for Whatsapp",
       "report": "Some report link for Whatsapp",
-      "image_url": "Some image url of the campaign"
+      "image_url": "/assets/svg/campaign-1.svg"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
       "csv": "Some CSV link for Super Jewels Quest",
       "report": "Some report link for Super Jewels Ques",
-      "image_url": "Some image url of the campaign"
+      "image_url": "/assets/svg/campaign-1.svg"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
       "csv": "Some CSV link for Mole Slayer",
       "report": "Some report link for Mole Slayer",
-      "image_url": "Some image url of the campaign"
+      "image_url": "/assets/svg/campaign-1.svg"
     },
     {
       "id": 4,
@@ -38,7 +38,7 @@
       "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
       "csv": "Some CSV link for Mancala Mix",
       "report": "Some report link for Mancala Mix",
-      "image_url": "Some image url of the campaign"
+      "image_url": "/assets/svg/campaign-1.svg"
     }
   ]
 }

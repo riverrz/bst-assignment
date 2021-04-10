@@ -5,6 +5,7 @@ import useAPIHook from "../../../hooks/useAPIHook";
 import { Campaign, Campaign as CampaignType } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
 import * as campaignServices from "../services/index";
+import CampaignDescription from "./CampaignDescription";
 import CampaignListItem from "./CampaignListItem";
 import Scheduler from "./Scheduler";
 import {
@@ -60,7 +61,6 @@ function CampaignList(props: Props) {
   // For opening modal containing calendar for updating scheduled date
   const openScheduleModal = useCallback(
     (campaign: Campaign) => {
-      console.log("Open schedule modal");
       addModal({
         content: (
           <Scheduler
@@ -71,6 +71,15 @@ function CampaignList(props: Props) {
       });
     },
     [addModal, onScheduleDateChange]
+  );
+
+  const openViewCampaignDescription = useCallback(
+    (campaign: Campaign) => {
+      addModal({
+        content: <CampaignDescription data={campaign} />,
+      });
+    },
+    [addModal]
   );
 
   if (loading) {
@@ -127,6 +136,7 @@ function CampaignList(props: Props) {
               key={campaign.id}
               data={campaign}
               openScheduleModal={openScheduleModal}
+              openViewCampaignDescription={openViewCampaignDescription}
             />
           );
         })}

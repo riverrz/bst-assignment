@@ -13,11 +13,11 @@ import {
 interface Props {
   data: Campaign;
   openScheduleModal: (data: Campaign) => void;
+  openViewCampaignDescription: (data: Campaign) => void;
 }
 
 function CampaignListItem(props: Props) {
-
-  const { data, openScheduleModal } = props;
+  const { data, openScheduleModal, openViewCampaignDescription } = props;
 
   const { name, region } = data;
   const createdOn = new Date(data.createdOn);
@@ -64,7 +64,10 @@ function CampaignListItem(props: Props) {
         </Flex>
       </CampaignContainer>
       <ViewContainer>
-        <Button className="grow">
+        <Button
+          className="grow"
+          onClick={() => openViewCampaignDescription(data)}
+        >
           <Flex alignItems="center">
             <Image src="/assets/svg/dollar.svg" alt="CSV" spaceRight />
             View

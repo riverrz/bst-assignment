@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface Props {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "div";
-  color?: "primary" | "secondary";
+  color?: "primary" | "secondary" | "grey";
   gutterBottom?: boolean;
   fontSize?: string;
   fontWeight?: string | number;
@@ -30,7 +30,7 @@ function buildTypographyElement(props: Props) {
     textAlign,
   } = props;
   return styled[as]`
-    color: ${getColor(color)};
+    color: var(--${color});
     ${gutterBottom ? "margin-bottom: 10px" : ""};
     ${fontSize ? `font-size: ${fontSize}` : ""};
     ${fontWeight ? `font-weight: ${fontWeight}` : ""};
@@ -38,15 +38,4 @@ function buildTypographyElement(props: Props) {
     ${fontStyle ? `font-style: ${fontStyle}` : ""};
     ${textAlign ? `text-align: ${textAlign}` : ""};
   `;
-}
-
-function getColor(color: Props["color"]) {
-  switch (color) {
-    case "primary":
-      return "var(--primary)";
-    case "secondary":
-      return "var(--secondary)";
-    default:
-      return "var(--primary)";
-  }
 }
