@@ -29,11 +29,14 @@ export const Button = styled.button<Props>`
         background-color: var(--${color});
         padding: 1rem 1.5rem;
         color: var(--white);
+        border: 2px solid var(--${color});
+        margin: 0 1rem;
       `;
     } else if (variant === "outlined") {
       return `
         padding: 1rem 1.5rem;
         border: 2px solid var(--${color});
+        margin: 0 1rem;
       `;
     } else {
       return `
