@@ -33,6 +33,7 @@ function CampaignDescription(props: Props) {
             fontSize="1.6rem"
             transform="uppercase"
             gutterBottom
+            className="overflow-ellipsis"
           >
             {name}
           </Typography>

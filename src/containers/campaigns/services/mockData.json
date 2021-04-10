@@ -39,6 +39,16 @@
       "csv": "Some CSV link for Mancala Mix",
       "report": "Some report link for Mancala Mix",
       "image_url": "/assets/svg/campaign-1.svg"
+    },
+    {
+      "id": 4,
+      "name": "Very big title testing mlksmadkmaklsmdklamsdlkmaskdlmaklmsdklmasdlkmalskdmlaksmdk",
+      "region": "JP",
+      "createdOn": 1559806680124,
+      "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
+      "csv": "Some CSV link for Mancala Mix",
+      "report": "Some report link for Mancala Mix",
+      "image_url": "/assets/svg/campaign-1.svg"
     }
   ]
 }

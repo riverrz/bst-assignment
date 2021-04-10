@@ -71,11 +71,33 @@ div.heading-container {
   justify-content: flex-start;
 }
 
+.overflow-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 325px;
+}
+
+@media (max-width: 1024px) {
+  .overflow-ellipsis {
+    width: 275px;
+  }
+}
+
+@media (max-width: 900px) {
+  .overflow-ellipsis {
+    width: 175px;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 50%;
   }
   div.actions-container {
     justify-content: flex-end;
+  }
+  .overflow-ellipsis {
+    width: 100px;
   }
 }

@@ -53,7 +53,7 @@ function CampaignListItem(props: Props) {
             <Image src="/assets/svg/campaign-1.svg" alt={name} spaceRight />
           </div>
           <div>
-            <Typography as="div" fontSize="1.6rem">
+            <Typography as="div" fontSize="1.6rem" className="overflow-ellipsis">
               {name}
             </Typography>
             <Typography
