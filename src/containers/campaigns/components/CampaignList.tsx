@@ -63,7 +63,10 @@ function CampaignList(props: Props) {
       console.log("Open schedule modal");
       addModal({
         content: (
-          <Scheduler onDone={(date) => onScheduleDateChange(date, campaign)} />
+          <Scheduler
+            onDone={(date) => onScheduleDateChange(date, campaign)}
+            currentDate={new Date(campaign.createdOn)}
+          />
         ),
       });
     },
