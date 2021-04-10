@@ -3,15 +3,19 @@ import { CampaignTypes } from "../types/CampaignTypes";
 
 export function matchesCampaignType(campaign: Campaign, type: CampaignTypes) {
   const { createdOn } = campaign;
-  const createdDate = new Date(createdOn).getTime();
-  const today = new Date().getTime();
+  const createdDate = new Date(createdOn);
+  // set date to midnight to avoid hours, minutes etc while comparing
+  createdDate.setHours(0, 0, 0, 0);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
   switch (type) {
     case CampaignTypes.LIVE:
-      return createdDate === today;
+      return createdDate.getTime() === today.getTime();
     case CampaignTypes.UPCOMING:
-      return createdDate > today;
+      return createdDate.getTime() > today.getTime();
     case CampaignTypes.PAST:
-      return createdDate < today;
+      return createdDate.getTime() < today.getTime();
   }
 }
 

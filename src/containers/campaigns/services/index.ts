@@ -58,7 +58,7 @@ export function updateCampaignScheduleDate(
   );
 
   // Push to newCampaignType
-  store[newCampaignType] = store[newCampaignType].concat(newCampaign);
+  store[newCampaignType] = (store[newCampaignType] || []).concat(newCampaign);
 
   const campaigns = [...store[newCampaignType]];
 
