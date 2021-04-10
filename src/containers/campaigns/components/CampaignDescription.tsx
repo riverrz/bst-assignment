@@ -6,6 +6,7 @@ import {
   Base,
   Button,
 } from "../../../components/common";
+import { strings } from "../../../language";
 import { Campaign } from "../../../types/Campaign";
 import { DescriptionContainer } from "./styled-components";
 
@@ -48,7 +49,7 @@ function CampaignDescription(props: Props) {
       </Flex>
       <Base margin="2rem 0">
         <Typography as="h3" fontSize="2.4rem" gutterBottom>
-          Pricing
+          {strings.pricing}
         </Typography>
         <Flex justifyContent="space-between">
           <Typography as="div" color="grey" fontSize="1.6rem" gutterBottom>
@@ -82,7 +83,7 @@ function CampaignDescription(props: Props) {
           color="dark"
           className="text-bold"
         >
-          Close
+          {strings.close}
         </Button>
       </Base>
     </DescriptionContainer>

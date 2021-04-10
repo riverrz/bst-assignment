@@ -3,6 +3,7 @@ import { Flex, Hidden, Typography, Image } from "../../../components/common";
 import { Button } from "../../../components/common/Button";
 import CollapsibleCTAs from "../../../components/common/CollapsibleCTAs";
 import { getDayDiff } from "../../../helpers";
+import { strings } from "../../../language";
 import { Campaign } from "../../../types/Campaign";
 import {
   ActionsContainer,
@@ -35,7 +36,7 @@ function CampaignListItem(props: Props) {
           fontWeight="normal"
           fontStyle="italic"
         >
-          {getDayDiff(createdOn, today)}
+          {getDayDiff(createdOn, today, strings)}
         </Typography>
       </>
     );
@@ -71,7 +72,7 @@ function CampaignListItem(props: Props) {
         >
           <Flex alignItems="center">
             <Image src="/assets/svg/dollar.svg" alt="CSV" spaceRight />
-            View
+            {strings.view}
           </Flex>
         </Button>
       </ViewContainer>
@@ -91,7 +92,7 @@ function CampaignListItem(props: Props) {
                   alt="Report"
                   spaceRight
                 />
-                Report
+                {strings.report}
               </Flex>
             </Button>
             <Button onClick={() => openScheduleModal(data)} className="grow">
@@ -101,7 +102,7 @@ function CampaignListItem(props: Props) {
                   alt="Schedule again"
                   spaceRight
                 />
-                Schedule again
+                {strings.scheduleAgain}
               </Flex>
             </Button>
           </CollapsibleCTAs>
@@ -111,4 +112,4 @@ function CampaignListItem(props: Props) {
   );
 }
 
-export default React.memo(CampaignListItem);
+export default CampaignListItem;

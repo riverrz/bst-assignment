@@ -1,5 +1,6 @@
 import { Campaign } from "../types/Campaign";
 import { CampaignTypes } from "../types/CampaignTypes";
+import { strings } from "../language";
 
 export function matchesCampaignType(campaign: Campaign, type: CampaignTypes) {
   const { createdOn } = campaign;
@@ -24,20 +25,24 @@ export const isSM = window.matchMedia("(max-width: 768px)").matches;
 export const isMD = window.matchMedia("(max-width: 992px)").matches;
 export const isLG = window.matchMedia("(min-width: 992px)").matches;
 
-export const getDayDiff = (date1: Date, date2: Date) => {
+export const getDayDiff = (
+  date1: Date,
+  date2: Date,
+  language: typeof strings
+) => {
   const time1 = date1.getTime(); // milli-seconds
   const time2 = date2.getTime();
 
   const dayDiff = Math.ceil((time1 - time2) / (1000 * 60 * 60 * 24));
 
   if (dayDiff === 0) {
-    return "Today";
+    return language.today;
   }
 
-  let suffix = "ago";
+  let suffix = language.ago;
 
   if (dayDiff > 0) {
-    suffix = "ahead";
+    suffix = language.ahead;
   }
-  return `${Math.abs(dayDiff)} days ${suffix}`;
+  return `${Math.abs(dayDiff)} ${language.days} ${suffix}`;
 };

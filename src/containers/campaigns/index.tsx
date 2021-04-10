@@ -8,6 +8,8 @@ import { strings } from "../../language";
 
 interface Props {}
 
+strings.setLanguage(Languages.ENGLISH);
+
 function Campaigns(props: Props) {
   const [activeType, setActiveType] = useState<CampaignTypes>(
     CampaignTypes.UPCOMING
@@ -43,7 +45,7 @@ function Campaigns(props: Props) {
         </Typography>
         <div>
           {renderLanguageBtn(Languages.ENGLISH, "English")}
-          {renderLanguageBtn(Languages.HINDI, "Hindi")}
+          {renderLanguageBtn(Languages.HINDI, "हिंदी")}
         </div>
       </Flex>
       <Flex margin="3rem 0">
@@ -53,7 +55,7 @@ function Campaigns(props: Props) {
               <Tab
                 key={campaignType}
                 eventKey={campaignType}
-                title={campaignType}
+                title={strings[campaignType]}
               />
             );
           })}

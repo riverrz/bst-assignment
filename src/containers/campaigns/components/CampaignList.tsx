@@ -2,6 +2,7 @@ import React, { useCallback, useContext, useEffect } from "react";
 import { Hidden, Typography } from "../../../components/common";
 import { ModalContext } from "../../../hoc/WithModals";
 import useAPIHook from "../../../hooks/useAPIHook";
+import { strings } from "../../../language";
 import { Campaign, Campaign as CampaignType } from "../../../types/Campaign";
 import { CampaignTypes } from "../../../types/CampaignTypes";
 import * as campaignServices from "../services/index";
@@ -85,7 +86,7 @@ function CampaignList(props: Props) {
   if (loading) {
     return (
       <Typography as="p" fontSize="1.6rem">
-        Loading...
+        {strings.loading}...
       </Typography>
     );
   }
@@ -99,7 +100,7 @@ function CampaignList(props: Props) {
   if (data.length === 0) {
     return (
       <Typography as="p" fontSize="1.6rem">
-        No campaigns available under this category!
+        {strings.noCampaignsAvailable}
       </Typography>
     );
   }
@@ -109,22 +110,22 @@ function CampaignList(props: Props) {
         <ListHeader>
           <DateContainer>
             <Typography as="h6" color="primary" fontSize="1.8rem">
-              Date
+              {strings.date}
             </Typography>
           </DateContainer>
           <CampaignContainer>
             <Typography as="h6" color="primary" fontSize="1.8rem">
-              Campaign
+              {strings.campaign}
             </Typography>
           </CampaignContainer>
           <ViewContainer>
             <Typography as="h6" color="primary" fontSize="1.8rem">
-              View
+              {strings.view}
             </Typography>
           </ViewContainer>
           <ActionsContainer>
             <Typography as="h6" color="primary" fontSize="1.8rem">
-              Actions
+              {strings.actions}
             </Typography>
           </ActionsContainer>
         </ListHeader>

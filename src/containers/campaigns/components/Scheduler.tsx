@@ -2,6 +2,7 @@ import React, { useCallback, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { Typography, Button, Base, Flex } from "../../../components/common";
+import { strings } from "../../../language";
 import { SchedulerContainer } from "./styled-components";
 
 interface Props {
@@ -22,7 +23,7 @@ function Scheduler(props: Props) {
   return (
     <SchedulerContainer>
       <Typography as="h5" textAlign="center" fontSize="1.8rem">
-        Choose new date
+        {strings.chooseNewDate}
       </Typography>
       <Base padding="2rem">
         <Calendar className="margin-center" onChange={onChange} value={date} />
@@ -34,7 +35,7 @@ function Scheduler(props: Props) {
           color="dark"
           className="text-bold"
         >
-          Close
+          {strings.close}
         </Button>
         <Button
           variant="contained"
@@ -44,7 +45,7 @@ function Scheduler(props: Props) {
             closeModal && closeModal();
           }}
         >
-          Done
+          {strings.done}
         </Button>
       </Flex>
     </SchedulerContainer>
