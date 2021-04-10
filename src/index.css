@@ -39,3 +39,9 @@ body {
 .text-center {
   text-align: center;
 }
+.margin-center {
+  margin: auto;
+}
+.text-bold {
+  font-weight: bold;
+}

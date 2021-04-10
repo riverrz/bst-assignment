@@ -25,10 +25,15 @@ function Scheduler(props: Props) {
         Choose new date
       </Typography>
       <Base padding="2rem">
-        <Calendar onChange={onChange} value={date} />
+        <Calendar className="margin-center" onChange={onChange} value={date} />
       </Base>
       <Flex justifyContent="space-evenly">
-        <Button onClick={closeModal} variant="outlined" color="dark">
+        <Button
+          onClick={closeModal}
+          variant="outlined"
+          color="dark"
+          className="text-bold"
+        >
           Close
         </Button>
         <Button
