@@ -48,7 +48,7 @@ function CampaignListItem(props: Props) {
         <DateContainer>{renderDate()}</DateContainer>
       </Hidden>
       <CampaignContainer>
-        <Flex alignItems="center">
+        <Flex alignItems="flex-start">
           <div>
             <Image src="/assets/svg/campaign-1.svg" alt={name} spaceRight />
           </div>
@@ -56,7 +56,13 @@ function CampaignListItem(props: Props) {
             <Typography as="div" fontSize="1.6rem">
               {name}
             </Typography>
-            <Typography as="div" fontStyle="italic" transform="uppercase">
+            <Typography
+              as="div"
+              fontStyle="italic"
+              transform="uppercase"
+              color="grey"
+              fontSize="1.4rem"
+            >
               {region}
             </Typography>
             <Hidden smUp>
@@ -77,15 +83,15 @@ function CampaignListItem(props: Props) {
         </Button>
       </ViewContainer>
       <ActionsContainer>
-        <Flex justifyContent="flex-start" alignItems="center">
+        <Flex className="actions-container" alignItems="center">
           <CollapsibleCTAs>
-            <Button className="grow">
+            <Button className="grow" block>
               <Flex alignItems="center">
                 <Image src="/assets/svg/csv-cta.svg" alt="CSV" spaceRight />
                 CSV
               </Flex>
             </Button>
-            <Button className="grow">
+            <Button className="grow" block>
               <Flex alignItems="center">
                 <Image
                   src="/assets/svg/report-cta.svg"
@@ -95,7 +101,11 @@ function CampaignListItem(props: Props) {
                 {strings.report}
               </Flex>
             </Button>
-            <Button onClick={() => openScheduleModal(data)} className="grow">
+            <Button
+              onClick={() => openScheduleModal(data)}
+              className="grow"
+              block
+            >
               <Flex alignItems="center">
                 <Image
                   src="/assets/svg/calendar.svg"

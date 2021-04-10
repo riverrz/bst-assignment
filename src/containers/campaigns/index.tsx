@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import { useCallback, useState } from "react";
 import { Button, Container, Flex, Typography } from "../../components/common";
 import { Tabs, Tab } from "../../components/common";
 import { CampaignTypes } from "../../types/CampaignTypes";
@@ -39,14 +39,17 @@ function Campaigns(props: Props) {
 
   return (
     <Container>
-      <Flex justifyContent="space-between">
-        <Typography fontSize="3vw" gutterBottom>
+      <Flex justifyContent="space-between" className="heading-container">
+        <Typography gutterBottom className="primary-heading">
           {strings.manageCampaigns}
         </Typography>
-        <div>
+        <Flex alignItems="center" className="language-cta-container">
+          <Typography as="h5" fontSize="1.5rem">
+            Change language:
+          </Typography>
           {renderLanguageBtn(Languages.ENGLISH, "English")}
           {renderLanguageBtn(Languages.HINDI, "हिंदी")}
-        </div>
+        </Flex>
       </Flex>
       <Flex margin="3rem 0">
         <Tabs activeTab={activeType} onChange={handleTypeChange}>

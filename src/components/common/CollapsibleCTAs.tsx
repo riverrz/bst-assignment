@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { isMD, isSM, isXS } from "../../helpers";
 import useComponentVisible from "../../hooks/useComponentVisible";
+import { Base } from "./Base";
 
 interface Props {
   children?: React.ReactNode;
@@ -21,7 +22,13 @@ function CollapsibleCTAs(props: Props) {
 
   const childrenArray = React.Children.toArray(children);
   const visibleChildren = childrenArray.slice(0, childrenToShow);
-  const collapsedChildren = childrenArray.slice(childrenToShow);
+  const collapsedChildren = childrenArray
+    .slice(childrenToShow)
+    .map((child, index) => (
+      <Base margin="0.5rem" key={index}>
+        {child}
+      </Base>
+    ));
 
   return (
     <>

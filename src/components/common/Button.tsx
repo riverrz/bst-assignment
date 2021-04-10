@@ -4,15 +4,24 @@ interface Props {
   hoverable?: boolean;
   variant?: "text" | "contained" | "outlined";
   color?: "primary" | "secondary" | "dark";
+  block?: boolean;
 }
 
 export const Button = styled.button<Props>`
   outline: none;
   border: none;
   // padding: 1rem 1.5rem;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  ${({ block }) => {
+    if (block) {
+      return `
+        display: block;
+        width: 100%;
+      `;
+    }
+  }}
   ${({ hoverable }) => {
     if (!hoverable) {
       return "";
@@ -37,6 +46,7 @@ export const Button = styled.button<Props>`
         padding: 1rem 1.5rem;
         border: 2px solid var(--${color});
         margin: 0 1rem;
+        
       `;
     } else {
       return `

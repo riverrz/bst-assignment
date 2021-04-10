@@ -11,11 +11,13 @@ interface Props {
   fontStyle?: string;
   children?: React.ReactNode;
   textAlign?: string;
+  className?: string;
 }
 
 export const Typography = React.memo(function (props: Props) {
   const StyledElement = buildTypographyElement(props);
-  return <StyledElement>{props.children}</StyledElement>;
+  const { className } = props;
+  return <StyledElement className={className}>{props.children}</StyledElement>;
 });
 
 function buildTypographyElement(props: Props) {
