@@ -1,47 +1,21 @@
-# Getting Started with Create React App
+# BlueStacks assignment
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech Stack used - ReactJS, Styled Components, Typescript, react-localization (for localization between english and hindi), react-calendar (for re-scheduling the date for a campaign).
 
-## Available Scripts
+## Test cases -
 
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-# bst-assignment
+| Description          | Execution Steps                                                                                              | Expected Output                                                                                                                       |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Campaign type tabs   | Re-directing to home page                                                                                    | 3 campaign type tabs i.e. Upcoming, Live and Past Campaign tabs must be visible.                                                      |
+| Campaign type tabs   | Clicking on individual tabs                                                                                  | Previously highlighted tab should become inactive and currently clicked should become active as represented in design.                |
+| Localization         | Selecting a language from available language buttons                                                         | Header data,x days ago,x days ahead,Tabs text should noew be shown in the selected language.                                          |
+| Campaign list items  | Clicking on a campaign's "Schedule again" button and selecting a date.                                       | The campaign's Date column should now show updated date.                                                                              |
+| Campaign list items  | Clicking campaign type tabs                                                                                  | Campaign type list items should be visible in their correct category.                                                                 |
+| Campaign date change | Clicking on a campaign's "Schedule again" button and selecting a date in past.                               | The campaign should now be removed from the current category and should be placed in "Past Campaign" category at appropriate row.     |
+| Campaign date change | Clicking on a campaign's "Schedule again" button and selecting today's date.                                 | The campaign should now be removed from the current category and should be placed in "Live Campaign" category at appropriate row.     |
+| Campaign date change | Clicking on a campaign's "Schedule again" button and selecting an upcoming date                              | The campaign should now be removed from the current category and should be placed in "Upcoming Campaign" category at appropriate row. |
+| Campaign date change | Clicking on a campaign's "Schedule again" button and selecting a date but clicking on close instead of done. | The campaign's date should not be changed and it's position should remain unchanged.                                                  |
+| Day difference       | Viewing a campaign item under a category                                                                     | The day difference in Date column should be correct with appropriate "ahead" or "ago" suffix.                                         |
+| Details Popup        | Clicking on View button of a campaign under "View" column.                                                   | Details popup should appear with correct details and as per the design.                                                               |
+| Text overflow        | Check a campaign with really big name                                                                        | The text should not overflow the column in both desktop and mobile view.                                                              |
+| Responsive           | Using Chrome's dev tools enter responsive mode and refresh the page                                          | The UI should be responsive with proper spacing and no overflows.                                                                     |

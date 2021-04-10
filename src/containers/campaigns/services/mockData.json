@@ -15,7 +15,7 @@
       "name": "Super Jewels Quest",
       "region": "CA, FR",
       "createdOn": 1559806715124,
-      "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
+      "price": { "weekly": 200, "yearly": 930, "halfYearly": 600 },
       "csv": "Some CSV link for Super Jewels Quest",
       "report": "Some report link for Super Jewels Ques",
       "image_url": "/assets/svg/campaign-1.svg"
@@ -25,7 +25,7 @@
       "name": "Mole Slayer",
       "region": "FR",
       "createdOn": 1559806711124,
-      "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
+      "price": { "weekly": 125, "yearly": 1000, "halfYearly": 350 },
       "csv": "Some CSV link for Mole Slayer",
       "report": "Some report link for Mole Slayer",
       "image_url": "/assets/svg/campaign-1.svg"
@@ -35,7 +35,7 @@
       "name": "Mancala Mix",
       "region": "JP",
       "createdOn": 1559806680124,
-      "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
+      "price": { "weekly": 1000, "yearly": 1900, "halfYearly": 1500 },
       "csv": "Some CSV link for Mancala Mix",
       "report": "Some report link for Mancala Mix",
       "image_url": "/assets/svg/campaign-1.svg"
@@ -45,7 +45,7 @@
       "name": "Very big title testing mlksmadkmaklsmdklamsdlkmaskdlmaklmsdklmasdlkmalskdmlaksmdk",
       "region": "JP",
       "createdOn": 1559806680124,
-      "price": { "weekly": 100, "yearly": 900, "halfYearly": 500 },
+      "price": { "weekly": 285, "yearly": 920, "halfYearly": 610 },
       "csv": "Some CSV link for Mancala Mix",
       "report": "Some report link for Mancala Mix",
       "image_url": "/assets/svg/campaign-1.svg"
