@@ -2,6 +2,7 @@ import React from "react";
 import { Flex, Hidden, Typography, Image } from "../../../components/common";
 import { Button } from "../../../components/common/Button";
 import CollapsibleCTAs from "../../../components/common/CollapsibleCTAs";
+import { getDayDiff } from "../../../helpers";
 import { Campaign } from "../../../types/Campaign";
 import {
   ActionsContainer,
@@ -21,7 +22,7 @@ function CampaignListItem(props: Props) {
 
   const { name, region } = data;
   const createdOn = new Date(data.createdOn);
-
+  const today = new Date();
   function renderDate() {
     return (
       <>
@@ -34,7 +35,7 @@ function CampaignListItem(props: Props) {
           fontWeight="normal"
           fontStyle="italic"
         >
-          5 days ago
+          {getDayDiff(createdOn, today)}
         </Typography>
       </>
     );
