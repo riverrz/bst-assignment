@@ -2,6 +2,8 @@
 
 Tech Stack used - ReactJS, Styled Components, Typescript, react-localization (for localization between english and hindi), react-calendar (for re-scheduling the date for a campaign).
 
+### Live link - https://focused-volhard-82c4c4.netlify.app/
+
 ## Test cases -
 
 | Description          | Execution Steps                                                                                              | Expected Output                                                                                                                       |
